@@ -1,10 +1,13 @@
-import AuthPage from "pages/AuthPage.js";
+import MainPage from "pages/mainPage";
+
+
+
 
 export const App = () => {
-  
+
   return (
     <div>
-      <AuthPage/>
+      <MainPage/>
     </div>
   );
 };
