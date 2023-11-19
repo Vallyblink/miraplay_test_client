@@ -13,6 +13,7 @@ import { setCredentials, setError } from 'redux/authSlice';
 import { Report } from 'notiflix';
 import { useNavigate } from 'react-router-dom';
 import { useRegisterMutation } from 'services/api_auth/api_auth';
+
 export const RegisterForm = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);

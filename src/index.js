@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App.js';
 import './index.css';
-import { Router } from 'react-router-dom';
+import {BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from 'redux/store';
 import { Provider } from 'react-redux';
@@ -13,6 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
      <Router basename="/miraplay_test_client">
       <App />
     </Router>
-    </PersistGate>
+  </PersistGate>
   </Provider>
 );

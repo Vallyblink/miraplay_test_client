@@ -8,6 +8,7 @@ import {
   Label,
 } from '../RegisterForm/RegisterForm.styled';
 import { Notify } from 'notiflix';
+import { ButtonAuth } from 'components/buttons/button';
 
 export const LoginFormContext = ({ showPassword, togglePassword }) => {
   const { values, dirty, isValid, touched, errors, handleSubmit } = useFormikContext();
@@ -61,11 +62,11 @@ export const LoginFormContext = ({ showPassword, togglePassword }) => {
           />
         )}
       </Label>
-      <button
+       <ButtonAuth
         title="Log In Now"
         type="submit"
         disabled={!dirty || !isValid}
-          ></button>
+      ></ButtonAuth>
           
     </FormikForm>
   );

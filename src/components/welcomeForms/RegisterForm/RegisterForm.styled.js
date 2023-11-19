@@ -3,14 +3,9 @@ import { Form, Field } from 'formik';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
-  //   min-height: 100%;
   height: 100vh;
   padding: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(196, 196, 196, 0) 25%,
-    #bedbb0 92.19%
-  );
+  background: #181818 url('https://res.cloudinary.com/teamprojectavatar/image/upload/v1700398533/TestTask/lmfdk9poyzklf0cc7l50.png') center/cover;
 
   display: flex;
   flex-direction: column;
@@ -67,7 +62,7 @@ export const Label = styled.label`
   width: 100%;
 `;
 export const FormikInput = styled(Field)`
-  width: 100%;
+  width: 90%;
   padding: 14px 18px;
   font-family: Poppins;
   font-size: 14px;
@@ -110,6 +105,10 @@ export const FormikInput = styled(Field)`
     opacity: 1;
     outline: none;
     
+  }
+
+  @media screen and (max-width: 780px) {
+    width: 88%;
   }
  
 

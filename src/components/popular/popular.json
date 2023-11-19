@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "65155c5b59c15dd8d5497c69",
+    "commonGameName": "Steam",
+    "gameImage": "https://clan.akamai.steamstatic.com/images/41316928/f7f5587c77587cc8ae5eb50e39defcbcc3acaa88.jpg"
+  },
+  {
+    "_id": "6516c2f4a8439571e469a34b",
+    "commonGameName": "EA",
+    "gameImage": "https://media.contentapi.ea.com/content/dam/eacom/en-au/migrated-images/2016/10/en-us-featured-image.jpg.adapt.crop16x9.1023w.jpg"
+  },
+  {
+    "_id": "65155e04b676067d292e4275",
+    "commonGameName": "Epic Games",
+    "gameImage": "https://cdn2.unrealengine.com/Epic+Games+Node%2FepicLogo_1920x1080-1920x1080-401b77ef30fa9e5aaadbdd99ad2ff27ceda27a6f.png"
+  },
+  {
+    "_id": "65154db359c15dd8d5497aa9",
+    "commonGameName": "Wargaming",
+    "gameImage": "https://wargaming.com/media/uploads/social_sharing/logo_wg_400-400.jpg"
+  }
+]

@@ -1,15 +1,18 @@
 
-import { LoginForm } from 'components/welcomeForms/LoginFrom.js/LoginForm.js';
-import { RegisterForm } from 'components/welcomeForms/RegisterForm/RegisterForm.js';
+import { LoginForm } from 'components/welcomeForms/LoginFrom.js/LoginForm';
+import { RegisterForm } from 'components/welcomeForms/RegisterForm/RegisterForm';
 import React from 'react';
-
+import { useParams} from 'react-router-dom';
 
 const AuthPage = () => {
+  const { id } = useParams();
+
+
 
   return (
     <>
-      <RegisterForm  />
-      <LoginForm />
+      {id === 'register' && <RegisterForm  />}
+      {id === 'login' && <LoginForm />}
     </>
   );
 };

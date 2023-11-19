@@ -8,6 +8,7 @@ import {
   Wrap,
   Label,
 } from './RegisterForm.styled';
+import { ButtonAuth } from 'components/buttons/button';
 export const RegisterFormContext = ({ showPassword, togglePassword }) => {
   const {
     values,
@@ -95,11 +96,11 @@ export const RegisterFormContext = ({ showPassword, togglePassword }) => {
           />
         )}
       </Label>
-      <button
-        title="Register Now"
+      <ButtonAuth
+        title="Register"
         type="submit"
         disabled={!dirty || !isValid}
-      ></button>
+      ></ButtonAuth>
 
       {/* <Button type="submit" disabled={!dirty || !isValid} aria-label="Submit">
         Register Now
