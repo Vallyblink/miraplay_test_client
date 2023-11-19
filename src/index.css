@@ -1,4 +1,4 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize; 
 @font-face{
   font-family: 'Neue Machina-Regular';
     src: url('../fonts/PPNeueMachina-Regular.otf') format('opentype');
