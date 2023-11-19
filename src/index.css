@@ -1,12 +1,23 @@
 @import-normalize; /* bring in normalize.css styles */
+@font-face{
+  font-family: 'Neue Machina-Regular';
+    src: url('../fonts/PPNeueMachina-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Neue Machina-Light';
+  src: url('../fonts/PPNeueMachina-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Neue Machina-Ultrabold';
+  src: url('../fonts/PPNeueMachina-Ultrabold.otf') format('opentype');
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Neue Machina-Regular';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1d1d1d; 
 }
 
 code {

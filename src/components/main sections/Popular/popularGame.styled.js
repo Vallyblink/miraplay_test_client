@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
-  width: 1175px;
-  margin: 0 auto;
+  background:#181818;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  padding: 0px 20px;
+  z-index: -2;
+  
+
+  @media screen and (min-width: 768px) {
+    padding: 0px 148px;
+    z-index: -2;
 `;
 
 export const SectionTitle = styled.h2`
