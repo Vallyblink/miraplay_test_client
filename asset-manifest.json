@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.7acaea2f.css",
-    "main.js": "/react-homework-template/static/js/main.f31dc761.js",
-    "index.html": "/react-homework-template/index.html",
-    "main.7acaea2f.css.map": "/react-homework-template/static/css/main.7acaea2f.css.map",
-    "main.f31dc761.js.map": "/react-homework-template/static/js/main.f31dc761.js.map"
+    "main.css": "/miraplay_test_client/static/css/main.4720c695.css",
+    "main.js": "/miraplay_test_client/static/js/main.6d172a9b.js",
+    "static/media/PPNeueMachina-Regular.otf": "/miraplay_test_client/static/media/PPNeueMachina-Regular.9dbd84d64fd4caf4c6d2.otf",
+    "static/media/PPNeueMachina-Ultrabold.otf": "/miraplay_test_client/static/media/PPNeueMachina-Ultrabold.39c2d3066c018681f83b.otf",
+    "static/media/PPNeueMachina-Light.otf": "/miraplay_test_client/static/media/PPNeueMachina-Light.976bfe88032bf7e27259.otf",
+    "index.html": "/miraplay_test_client/index.html",
+    "main.4720c695.css.map": "/miraplay_test_client/static/css/main.4720c695.css.map",
+    "main.6d172a9b.js.map": "/miraplay_test_client/static/js/main.6d172a9b.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.f31dc761.js"
+    "static/css/main.4720c695.css",
+    "static/js/main.6d172a9b.js"
   ]
 }
