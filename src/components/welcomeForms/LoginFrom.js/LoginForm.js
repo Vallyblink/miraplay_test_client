@@ -51,11 +51,6 @@ export const LoginForm = () => {
         }
         if (response.error.status === 401) {
           Report.failure('Error!', 'Email or password is wrong', 'Okay');
-          // Report.failure(
-          //   'Error!',
-          //   'User with the provided credentials does not exist. Please double-check your information or consider registering if you are a new user.',
-          //   'Okay'
-          // );
         }
 
         dispatch(setError(response.error));

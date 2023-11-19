@@ -34,11 +34,6 @@ export const RegisterForm = () => {
 
       if (response && response.token) {
         dispatch(setCredentials(response));
-        // Report.success(
-        //   'Registration successful',
-        //   'Welcome to our application!',
-        //   'Okay'
-        // );
         navigate('/home');
       }
 
