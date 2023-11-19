@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/miraplay_test_client/static/css/main.7acaea2f.css",
+    "main.js": "/miraplay_test_client/static/js/main.c2a44deb.js",
+    "index.html": "/miraplay_test_client/index.html",
+    "main.7acaea2f.css.map": "/miraplay_test_client/static/css/main.7acaea2f.css.map",
+    "main.c2a44deb.js.map": "/miraplay_test_client/static/js/main.c2a44deb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.c2a44deb.js"
+  ]
+}
