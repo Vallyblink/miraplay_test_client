@@ -21,24 +21,11 @@ import { ButtonGenre, ButtonLoadMore } from 'components/buttons/button';
 const GameList = () => {
   const [games, setGames] = useState([]);
   const [page, setPage] = useState(1);
-  const [genre, setGenre] = useState('ALL');
+  const [genre, setGenre] = useState(false);
   const [hasMoreGames, setHasMoreGames] = useState(true);
 
-  useEffect(() => {
-    const fetchALLGames = async () => {
-      try {
-        const response = await axios.get('https://api.miraplay.cloud/games');
-        setGames(response.data.slice(0, 9));
-      } catch (error) {
-        console.error('Error fetching data:', error.message);
-      }
-    };
-
-    fetchALLGames();
-  }, []);
-
   const genres = {
-    ALL: 'Всі',
+    false: 'Всі',
     FREE: 'Безкоштовні',
     MOBA: 'МОБА',
     SHOOTERS: 'Шутери',
@@ -56,7 +43,7 @@ const GameList = () => {
       const response = await axios.post('https://api.miraplay.cloud/games/by_page', {
         page,
         isFreshGamesFirst: true,
-        genre,
+        genre: genre,
         gamesToShow: 9,
       });
 
@@ -65,7 +52,7 @@ const GameList = () => {
       if (newGames.length === 0) {
         setHasMoreGames(false);
       } else {
-        setGames((prevGames) => [...prevGames, ...newGames]);
+        setGames(() => [ ...newGames]);
       }
     } catch (error) {
       console.error('Error fetching data:', error.message);
