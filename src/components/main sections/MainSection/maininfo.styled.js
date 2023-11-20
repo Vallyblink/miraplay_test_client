@@ -8,33 +8,25 @@ export const MainSection = styled.section`
   background-repeat: no-repeat;
   align-items: center;
   z-index: -2;
+  overflow-x: hidden;
 
- @media screen and (max-width: 1200px) {
-    flex-direction: column-reverse;
-    
+  @media screen and (max-width: 1200px) {
     justify-content: space-around;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 780px){
+  @media screen and (min-width: 320px) and (max-width: 780px) {
     flex-direction: column-reverse;
-    
-    
-    }
-
+  }
 `;
 
 export const LeftContent = styled.div`
   padding-left: 50px;
   letter-spacing: 0.03em;
 
-   @media screen and (max-width: 1200px) {
-   z-index:1;
-   margin-top: 100px;
+  @media screen and (max-width: 1200px) {
+    margin-top: 100px;
+    z-index: 1;
   }
-
-  @media screen and (min-width: 320px) and (max-width: 780px){
-   z-index:1;
-    }
 `;
 
 export const SectionTitle = styled.h2`
@@ -55,14 +47,14 @@ export const SectionTitle = styled.h2`
     width: 80%;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 780px){
+  @media screen and (min-width: 320px) and (max-width: 780px) {
     font-size: 20px;
     font-weight: 800;
     line-height: 100%;
     margin-bottom: 24px;
     text-transform: uppercase;
     width: 80%;
-    }
+  }
 `;
 
 export const SectionText = styled.p`
@@ -79,12 +71,12 @@ export const SectionText = styled.p`
     width: 100%;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 780px){
+  @media screen and (min-width: 320px) and (max-width: 780px) {
     font-size: 14px;
     font-weight: 300;
     line-height: 170%;
     width: 100%;
-    }
+  }
 `;
 
 export const RightContent = styled.div`
@@ -109,16 +101,7 @@ export const ImageContainer = styled.div`
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 
- @media screen and (min-width: 320px) and (max-width: 780px) {
-    left: 55%;
-    position: absolute;
-    top: 50px;
-    -webkit-transform: translateX(-50%) scale(1);
-    transform: translateX(-50%) scale(1);
-    transition: all 0.2s ease-in-out;
-  }
-
-  @media screen and (max-width: 1200px){
+  @media screen and (min-width: 320px) and (max-width: 780px) {
     left: 50%;
     position: absolute;
     top: 10px;
@@ -126,8 +109,7 @@ export const ImageContainer = styled.div`
     -webkit-transform: translateX(-50%) scale(1);
     transform: translateX(-50%) scale(1);
     transition: all 0.2s ease-in-out;
-    
-    
+    z-index: 0;
   }
 `;
 
@@ -138,13 +120,12 @@ export const MainImage = styled.img`
   background-repeat: no-repeat;
 
   @media screen and (max-width: 1200px) {
-   width: 80vw;
+    width: 80vw;
   }
 
-  @media screen and (min-width: 320px) and (max-width: 780px){
-   width: 70vw;
-    }
-  
+  @media screen and (min-width: 320px) and (max-width: 780px) {
+    width: 85vw;
+  }
 `;
 
 export const NavigationTips = styled.p`
@@ -159,4 +140,3 @@ export const Free = styled.span`
   color: #fff;
   font-weight: 800;
 `;
-

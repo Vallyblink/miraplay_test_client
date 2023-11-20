@@ -1,29 +1,26 @@
 import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
-    height: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-repeat: no-repeat;
-    align-items: initial;
-    margin: 0 auto;
-    width: 1170px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  align-items: initial;
+  margin: 0 auto;
+  width: 1170px;
 
-  
-   @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1200px) {
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    width:100%
-    }
 
+  }
 
-    @media screen and (min-width: 320px) and (max-width: 767px){
+  @media screen and (min-width: 320px) and (max-width: 767px) {
     min-height: 500px;
     overflow: hidden;
     width: 100%;
-    }
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -34,51 +31,59 @@ export const SectionTitle = styled.h2`
   text-transform: uppercase;
   font-family: 'Neue Machina-Ultrabold';
   color: #eaeaea;
+
+ @media screen and (min-width: 780px) and (max-width: 1200px) {
+    margin-left: 40px;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 780px) {
+    margin-left: 40px;
+  }
 `;
 
 export const GameContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
-  width: calc((100% - 60px) / 4); 
-  @media screen and (min-width: 1200px) {
+  gap: 20px;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 320px) and (max-width: 1200px) {
     width: 100%;
   }
 
-  @media screen and (max-width: 1200px){
-    width: calc((100% - 60px) / 1);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    }
-
-
-    @media screen and (min-width: 320px) and (max-width: 767px){
-    width: calc((100% - 60px) / 1);
-    }
+  @media screen and (min-width: 1201px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const GameCard = styled.div`
- background: #1c1c1c;
+  background: #1c1c1c;
   border-radius: 20px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 170px; 
+  width: calc((100% - 60px) / 2);
+  max-width: 180px;
   margin-bottom: 30px;
+  margin-left: 10px;
   color: #afafaf;
   height: 200px;
 
   &:hover {
-  background: #403c3c;
+    background: #403c3c;
   }
 
-   
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
 `;
 
 export const GameImage = styled.img`
-   border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
   object-fit: cover;
   object-position: center;
   width: 100%;

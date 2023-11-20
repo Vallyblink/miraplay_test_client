@@ -1,23 +1,22 @@
 import styled from 'styled-components';
 
 export const GameContainer = styled.div`
+  margin: 0 auto;
+  min-height: 500px;
+  padding-bottom: 50px;
+
+  @media screen and (min-width: 1200px) {
     margin: 0 auto;
     min-height: 500px;
     padding-bottom: 50px;
-   
-
-    @media screen and (min-width: 1200px){
-    margin: 0 auto;
-    min-height: 500px;
-    padding-bottom: 50px; 
     width: 1170px;
-    }
+  }
 
-    @media screen and (min-width: 320px) and (max-width: 780px){
+  @media screen and (min-width: 320px) and (max-width: 780px) {
     min-height: 500px;
     overflow: hidden;
     width: 100%;
-    }
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -25,20 +24,9 @@ export const ButtonsContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   gap: 10px;
-  max-width: 800px; 
+  max-width: 800px;
   width: 100%;
   align-items: baseline;
-   
-  @media screen and (max-width: 1200px){
-   max-width: 600px; 
-   width: 100%;
-    }
-
-    @media screen and (min-width: 320px) and (max-width: 767px){
-    max-width: 300px; 
-   width: 100%;
-    }
-  
 `;
 
 export const MainTitle = styled.h2`
@@ -49,8 +37,13 @@ export const MainTitle = styled.h2`
   margin-bottom: 42px;
   text-transform: uppercase;
   color: #eaeaea;
-  @media screen and (min-width: 780px) and (max-width: 1200px){
-   margin-left:30px;
+
+  @media screen and (min-width: 780px) and (max-width: 1200px) {
+    margin-left: 40px;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 780px) {
+    margin-left: 40px;
   }
 `;
 
@@ -59,8 +52,7 @@ export const Genres = styled.div`
   gap: 10px;
   justify-content: center;
   margin-bottom: 20px;
-  margin-left:30px;
-    
+  margin-left: 30px;
 `;
 
 export const GenresList = styled.ul`
@@ -80,17 +72,26 @@ export const GameCards = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  display: flex;
   justify-content: center;
-  width: calc((100% - 60px) / 4); 
+  width: calc((100% - 60px) / 4);
+  
+
   @media screen and (min-width: 1200px) {
     width: 100%;
   }
-   @media screen and (min-width: 780px) and (max-width: 1200px){
-   width: 100%;
+
+  @media screen and (min-width: 780px) and (max-width: 1200px) {
+    width: calc((100% - 60px) / 1);
+    margin-left: 30px;
+
+    &:nth-child(2n) {
+      margin-left: 0;
+    }
   }
-    @media screen and (min-width: 320px) and (max-width: 780px){
-    width: calc((100% - 60px) / 1); 
+
+  @media screen and (min-width: 320px) and (max-width: 780px) {
+    width: calc((100% - 40px));
+    margin-left: 20px;
   }
 `;
 
@@ -101,13 +102,19 @@ export const GameCard = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 335px; 
+  width: calc((100% - 60px) / 2);
   margin-bottom: 30px;
   color: #afafaf;
   height: 530px;
+  width: 335px; 
 
   &:hover {
-    
+  }
+  @media screen and (min-width: 320px) and (max-width: 780px) {
+    width: calc((100% - 40px) / 2);
+  }
+  @media screen and (min-width: 320px) and (max-width: 780px) {
+    width: calc((100% - 40px) / 1);
   }
 `;
 
@@ -133,7 +140,6 @@ export const GameTitle = styled.h2`
   text-transform: uppercase;
   font-family: 'Neue Machina-Ultrabold';
   color: #eaeaea;
-    
 `;
 
 export const GameDescription = styled.p`
@@ -154,4 +160,9 @@ export const AdditionalInfo = styled.div`
   color: #afafaf;
   display: flex;
   justify-content: space-between;
+`;
+
+export const LoadMoreButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;

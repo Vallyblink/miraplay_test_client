@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   HeaderContainer,
@@ -6,7 +5,8 @@ import {
   MobileMenu,
   MobileMenuButton,
   Navigation,
-  HeaderSection
+  HeaderSection,
+  MobileTitle
 } from './headbar.styled';
 
 const buttons = ['Ігри', 'Про платформу', 'Здай в аренду ПК', 'Новини', 'FAQ'];
@@ -21,21 +21,22 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderSection>
-      <Logo>
+        <Logo>
           <img src="https://res.cloudinary.com/teamprojectavatar/image/upload/v1700396946/TestTask/v0r1jc18irurreejq10w.png" alt="Logo" />
         </Logo>
-      <Navigation>
-        {buttons.map((button, index) => (
-          <button key={index}>{button}</button>
-        ))}
-      </Navigation>
-      <MobileMenuButton onClick={toggleMobileMenu}>Меню</MobileMenuButton>
-      {isMobileMenuOpen && (
-        <MobileMenu>
+        <Navigation>
           {buttons.map((button, index) => (
             <button key={index}>{button}</button>
           ))}
-        </MobileMenu>
+        </Navigation>
+        <MobileMenuButton onClick={toggleMobileMenu}>Меню</MobileMenuButton>
+        {isMobileMenuOpen && (
+          <MobileMenu>
+            <MobileTitle>Категорії</MobileTitle>
+            {buttons.map((button, index) => (
+              <button key={index}>{button}</button>
+            ))}
+          </MobileMenu>
         )}
       </HeaderSection>
     </HeaderContainer>
@@ -43,3 +44,4 @@ const Header = () => {
 };
 
 export default Header;
+
