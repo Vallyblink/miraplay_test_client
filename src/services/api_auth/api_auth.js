@@ -13,7 +13,8 @@ export const authAPI = createApi({
                 method: "POST",
                 body: credentials,
                 skipToken: true,
-            })
+            }),
+            providesTags: ['User'],
         }),
         loginGoogleUser: builder.mutation({
             query: credentials => ({

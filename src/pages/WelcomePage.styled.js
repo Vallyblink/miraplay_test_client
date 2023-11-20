@@ -70,6 +70,7 @@ export const RegistrationLink = styled(Link)`
 export const Loginlink = styled(Link)`
   color: #3f9c14; 
   background: #fff; 
+  margin-bottom: 30px;
 `;
 
 export const Image = styled.img`

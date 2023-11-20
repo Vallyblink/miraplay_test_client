@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-import { AdditionalInfo, CardInfo, GameCard, GameCards, GameContainer, GameDescription, GameImage, GameTitle, GenreButtons } from './gamelist.styled';
+import {
+    AdditionalInfo,
+    CardInfo, GameCard,
+    GameCards, GameContainer,
+    GameDescription, GameImage,
+    GameTitle,
+    MainTitle,
+    ButtonsContainer,
+    Genres,
+    GenresList,
+    GenreItem
+} from './gamelist.styled';
+import { ButtonGenre, ButtonLoadMore } from 'components/buttons/button';
 
 const GameList = () => {
     const [games, setGames] = useState([]);
     const [page, setPage] = useState(1);
-    const [genre, setGenre] = useState('');
+    const [genre, setGenre] = useState('ALL');
+    const [hasMoreGames, setHasMoreGames] = useState(true);
+    
    
     useEffect(() => {
         const fetchALLGames = async () => {
@@ -21,19 +35,19 @@ const GameList = () => {
         fetchALLGames();
     }, []);
     
-    const genres = [
-        'ALL',
-        'FREE',
-        'MOBA',
-        'SHOOTERS',
-        'LAUNCHERS',
-        'MMORPG',
-        'STRATEGY',
-        'FIGHTING',
-        'RACING',
-        'SURVIVAL',
-        'ONLINE',
-    ];
+    const genres = {
+    ALL: 'Всі',
+    FREE: 'Безкоштовні',
+    MOBA: 'МОБА',
+    SHOOTERS: 'Шутери',
+    LAUNCHERS: 'Лаунчери',
+    MMORPG: 'MMORPG',
+    STRATEGY: 'Стратегії',
+    FIGHTING: 'Файтинги',
+    RACING: 'Гонки',
+    SURVIVAL: 'Виживання',
+    ONLINE: 'Онлайн',
+    };
   
     const fetchGames = async () => {
         try {
@@ -44,10 +58,16 @@ const GameList = () => {
                 gamesToShow: 9,
             });
 
-            setGames(() => [...response.data.games]);
-        } catch (error) {
-            console.error('Error fetching data:', error.message);
-        }
+            const newGames = response.data.games;
+
+      if (newGames.length === 0) {
+        setHasMoreGames(false);
+      } else {
+        setGames(() => [ ...newGames]);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error.message);
+    }
     };
     
 
@@ -61,6 +81,7 @@ const GameList = () => {
     const handleGenreChange = (selectedGenre) => {
         setGenre(selectedGenre);
         setPage(1);
+        setHasMoreGames(true);
     };
     console.log(genre)
     console.log(games)
@@ -70,17 +91,25 @@ const GameList = () => {
 
     return (
         <GameContainer>
-            <h1>Game List</h1>
-            <GenreButtons>
-                    {genres.map((g) => (
-                        <button key={g} onClick={() => handleGenreChange(g)}>
-                            {g}
-                        </button>
-                    ))}
-                </GenreButtons>
-            <div>
-             
-                <GameCards>
+        <MainTitle>Всі Ігри</MainTitle>    
+        <ButtonsContainer>
+            <Genres>
+             <GenresList>
+                 {Object.entries(genres).map(([key, value]) => (
+                    <GenreItem key={key}>
+                        <ButtonGenre
+                        title={value}
+                        active={key === genre}
+                        onClick={() => handleGenreChange(key)}
+                    />
+                    </GenreItem>
+                 ))}
+            </GenresList>
+            </Genres>
+        </ButtonsContainer>
+            
+        <GameContainer>
+            <GameCards>
                     {games.map((game) => (
                         <GameCard key={nanoid()}>
                             <GameImage src={game.gameImage} alt={game.commonGameName} />
@@ -93,9 +122,10 @@ const GameList = () => {
                             </CardInfo>
                         </GameCard>
                     ))}
+                    <ButtonLoadMore onClick={handleLoadMore} title={"Показати ще"} disabled={hasMoreGames !== true} />
                 </GameCards>
-                <button onClick={handleLoadMore}>Load More</button>
-            </div>
+                
+            </GameContainer>
         </GameContainer>
     );
 }

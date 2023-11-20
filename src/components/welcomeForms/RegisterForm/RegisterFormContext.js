@@ -101,10 +101,6 @@ export const RegisterFormContext = ({ showPassword, togglePassword }) => {
         type="submit"
         disabled={!dirty || !isValid}
       ></ButtonAuth>
-
-      {/* <Button type="submit" disabled={!dirty || !isValid} aria-label="Submit">
-        Register Now
-      </Button> */}
     </FormikForm>
   );
 };

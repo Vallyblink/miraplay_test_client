@@ -4,7 +4,7 @@ import { GameCard, GameContainer, GameImage, GameTitle, SectionContainer, Sectio
 const PopularGamesSection = ({ games }) => {
   return (
     <SectionContainer>
-      <SectionTitle>Popular Games</SectionTitle>
+      <SectionTitle>Популярні</SectionTitle>
       <GameContainer>
         {games.map((game) => (
           <GameCard key={game._id}>

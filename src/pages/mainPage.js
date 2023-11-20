@@ -7,6 +7,7 @@ import GameList from 'components/main sections/GameList/gamelist';
 import MainSectionComponent from 'components/main sections/MainSection/maininfo';
 import Header from 'components/headbar/mainheadbar';
 
+
 const MainPage = () => {
  
   return (

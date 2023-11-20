@@ -2,9 +2,9 @@ import { useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 
 import jwt_decode from "jwt-decode";
-import { API } from 'Services/API';
 import { useNavigate } from 'react-router-dom';
-import { setCredentials } from 'redux/auth/authAPISlice';
+import { setCredentials } from 'redux/authSlice';
+import { useLoginGoogleUserMutation } from 'services/api_auth/api_auth';
 
 const src = 'https://accounts.google.com/gsi/client'
 const loadScript = (src) =>
@@ -21,18 +21,17 @@ new Promise((resolve, reject) => {
 })
 
 const GoogleAuth = () => {
-    const [LoginGoogle] = API.useLoginGoogleUserMutation();
+    const [LoginGoogle] = useLoginGoogleUserMutation();
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
 
     useEffect(() => {
 
-        const id = "977057280335-41hunm9r5aqak6m0vvdeq1p06rm7b5dg.apps.googleusercontent.com"
+        const id = "691844797968-3g9ksmtk5vnkscj0pogt8plg4a382gdu.apps.googleusercontent.com"
 
         loadScript(src)
             .then(() => {
-                // /*global google*/
                 if (window.google && window.google.accounts && window.google.accounts.id) {
                     window.google.accounts.id.initialize({ 
                         client_id: id, 

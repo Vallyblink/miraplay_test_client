@@ -1,16 +1,79 @@
 import styled from 'styled-components';
 
 export const GameContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-top: 65px;
+    margin: 0 auto;
+    min-height: 500px;
+    padding-bottom: 50px;
+   
+
+    @media screen and (min-width: 1200px){
+    margin: 0 auto;
+    min-height: 500px;
+    padding-bottom: 50px; 
+    width: 1170px;
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 780px){
+    min-height: 500px;
+    overflow: hidden;
+    width: 100%;
+    }
 `;
 
-export const GenreButtons = styled.div`
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px; 
+  width: 100%;
+  align-items: baseline;
+   
+  @media screen and (max-width: 1200px){
+   max-width: 600px; 
+   width: 100%;
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 767px){
+    max-width: 300px; 
+   width: 100%;
+    }
+  
+`;
+
+export const MainTitle = styled.h2`
+  font-size: 48px;
+  font-weight: 900;
+  font-family: 'Neue Machina-Ultrabold';
+  line-height: 100%;
+  margin-bottom: 42px;
+  text-transform: uppercase;
+  color: #eaeaea;
+  @media screen and (min-width: 780px) and (max-width: 1200px){
+   margin-left:30px;
+  }
+`;
+
+export const Genres = styled.div`
   display: flex;
   gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left:30px;
+    
+`;
+
+export const GenresList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
+export const GenreItem = styled.li`
+  margin-bottom: 10px;
 `;
 
 export const GameCards = styled.div`
@@ -19,9 +82,15 @@ export const GameCards = styled.div`
   gap: 30px;
   display: flex;
   justify-content: center;
-
+  width: calc((100% - 60px) / 4); 
   @media screen and (min-width: 1200px) {
     width: 100%;
+  }
+   @media screen and (min-width: 780px) and (max-width: 1200px){
+   width: 100%;
+  }
+    @media screen and (min-width: 320px) and (max-width: 780px){
+    width: calc((100% - 60px) / 1); 
   }
 `;
 
@@ -32,7 +101,7 @@ export const GameCard = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: calc((100% - 60px) / 4); 
+  width: 335px; 
   margin-bottom: 30px;
   color: #afafaf;
   height: 530px;
@@ -57,17 +126,18 @@ export const CardInfo = styled.div`
 `;
 
 export const GameTitle = styled.h2`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 800;
-  line-height: 164%;
+  line-height: 36px;
   margin-bottom: 6px;
   text-transform: uppercase;
-  font-family: 'Neue Machina';
-  color: #afafaf;
+  font-family: 'Neue Machina-Ultrabold';
+  color: #eaeaea;
+    
 `;
 
 export const GameDescription = styled.p`
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 300;
   line-height: 18px;
   height: 89px;
@@ -84,5 +154,4 @@ export const AdditionalInfo = styled.div`
   color: #afafaf;
   display: flex;
   justify-content: space-between;
-  padding: 5px 10px;
 `;

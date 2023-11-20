@@ -9,7 +9,7 @@ import {
 } from './RegisterForm.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setCredentials, setError } from 'redux/authSlice';
+import { setCredentials, setError, setIsLoggedIn } from 'redux/authSlice';
 import { Report } from 'notiflix';
 import { useNavigate } from 'react-router-dom';
 import { useRegisterMutation } from 'services/api_auth/api_auth';
@@ -31,14 +31,14 @@ export const RegisterForm = () => {
       password: values.password.trim(),
     };
     try {
-      const response = await register(trimmedValues).unwrap();
-
-      if (response && response.token) {
-        dispatch(setCredentials(response));
-        navigate('/home');
+      const response = await register(trimmedValues);
+      if (response.data && response.data.user.token) {
+        dispatch(setCredentials(response.data));
+        dispatch(setIsLoggedIn(true));
+        navigate("/home");
+        resetForm();
       }
 
-      resetForm();
     } catch (error) {
       if (error.status === 409) {
         Report.failure('Error!', 'Email is already in use', 'Okay');

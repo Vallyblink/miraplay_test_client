@@ -72,7 +72,7 @@ export const FormikInput = styled(Field)`
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   opacity: 0.4;
-  border: 1px solid rgba(190, 219, 176, 1);
+  border: 1px solid #3f9c14;
 
   background: #1f1f1f;
   box-shadow: 0px 4px 16px 0px rgba(22, 22, 22, 0.08);
@@ -91,12 +91,11 @@ export const FormikInput = styled(Field)`
     caret-color: #fff; !important;
   
   opacity: 0.4;
-  border: 1px solid rgba(190, 219, 176, 1);
+  border: 1px solid #3f9c14;
   }
    &:-webkit-autofill:active {
     box-shadow: none;
-    background-color: #151515;
-    // opacity: 1;
+    background-color: #3f9c14;
      -webkit-text-fill-color: #fff;!important;
      caret-color: #fff; !important;
   }
@@ -128,7 +127,7 @@ export const IconBtn = styled(({ active, ...rest }) => <button {...rest} />)`
   position: absolute;
   right: 12px;
   top: 50%;
-  background-color: transparent;
+  background-color: #3f9c14 !important;
   border: none;
   transform: translateY(-50%);
   cursor: pointer;
@@ -143,37 +142,8 @@ export const IconBtn = styled(({ active, ...rest }) => <button {...rest} />)`
     css`
       opacity: 1;
       svg {
-        stroke: rgba(190, 219, 176, 1);
+        stroke: #3f9c14;
       }
     `}
 `;
 
-export const Button = styled.button`
-  color: #161616;
-  text-align: center;
-  font-family: Poppins;
-  font-size: 14px;
-  padding: 14px 0;
-  -webkit-tap-highlight-color: transparent;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -0.28px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: -0.28px;
-  margin-top: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  background: #9DC888;
-    transition: all 0.3s ease;
-   outline: none;
-     cursor: pointer;
-  &:disabled {
-     background: #bedbb0;
-    cursor: not-allowed;
-    &:focus {
-       -webkit-tap-highlight-color: none;
-       
-    }
-`;

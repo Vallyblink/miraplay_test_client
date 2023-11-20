@@ -1,65 +1,15 @@
-// Header.js
+
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import {
+  HeaderContainer,
+  Logo,
+  MobileMenu,
+  MobileMenuButton,
+  Navigation,
+  HeaderSection
+} from './headbar.styled';
 
 const buttons = ['Ігри', 'Про платформу', 'Здай в аренду ПК', 'Новини', 'FAQ'];
-
-const HeaderContainer = styled.header`
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  background-color: #1c1c1c;
-  color: #fff;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-`;
-
-const Logo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-const Navigation = styled.nav`
-  display: flex;
-  gap: 20px;
-
-  button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none; /* Ховаємо навігацію на більших екранах */
-  }
-`;
-
-const MobileMenuButton = styled.button`
-  display: none; /* Приховуємо кнопку на більших екранах */
-
-  @media screen and (max-width: 768px) {
-    display: block; /* Показуємо кнопку на мобільних пристроях */
-  }
-`;
-
-const MobileMenu = styled.div`
-  display: none; /* Приховуємо випадаюче меню на більших екранах */
-
-  @media screen and (max-width: 768px) {
-    display: block; /* Показуємо випадаюче меню на мобільних пристроях */
-    position: fixed;
-    top: 90px;
-    right: 20px;
-    background-color: #1c1c1c;
-    color: #fff;
-    padding: 10px;
-  }
-`;
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,7 +20,10 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo>Logo</Logo>
+      <HeaderSection>
+      <Logo>
+          <img src="https://res.cloudinary.com/teamprojectavatar/image/upload/v1700396946/TestTask/v0r1jc18irurreejq10w.png" alt="Logo" />
+        </Logo>
       <Navigation>
         {buttons.map((button, index) => (
           <button key={index}>{button}</button>
@@ -83,7 +36,8 @@ const Header = () => {
             <button key={index}>{button}</button>
           ))}
         </MobileMenu>
-      )}
+        )}
+      </HeaderSection>
     </HeaderContainer>
   );
 };
