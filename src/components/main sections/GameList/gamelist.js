@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 import {
-  AdditionalInfo,
   CardInfo,
   GameCard,
   GameCards,
@@ -110,7 +109,10 @@ const GameList = () => {
             <CardInfo>
               <GameTitle>{game.commonGameName}</GameTitle>
               <GameDescription>{game.gameDescription}</GameDescription>
-              <AdditionalInfo></AdditionalInfo>
+              {/* <AdditionalInfo>
+              {game.inTop && <p>Топ гра</p>}
+              {game.genre && <p>{game.genre}</p>}
+              </AdditionalInfo> */}
             </CardInfo>
           </GameCard>
         ))}

@@ -153,16 +153,30 @@ export const GameDescription = styled.p`
   overflow: hidden;
 `;
 
-export const AdditionalInfo = styled.div`
-  align-items: center;
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  color: #afafaf;
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const LoadMoreButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+// export const AdditionalInfo = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   align-items: flex-start;
+//   backdrop-filter: blur(10px);
+//   border-radius: 10px;
+//   color: var(--main-text-color);
+//   display: flex;
+//   padding: 5px 10px;
+//   background-color: #0c052040;
+
+//   p {
+//     margin: 0;
+//     &.top-game {
+//       color: #3f9c14;
+//     }
+//     &.genre {
+//       color: #ffffff;
+//     }
+//   }
+// `;
