@@ -22,10 +22,10 @@ const GameList = () => {
   const [games, setGames] = useState([]);
   const [page, setPage] = useState(1);
   const [genre, setGenre] = useState(false);
-  const [hasMoreGames, setHasMoreGames] = useState(true);
+  const [hasMoreGames, setHasMoreGames] = useState(false);
 
   const genres = {
-    false: 'Всі',
+    ALL: 'Всі',
     FREE: 'Безкоштовні',
     MOBA: 'МОБА',
     SHOOTERS: 'Шутери',
@@ -43,16 +43,18 @@ const GameList = () => {
       const response = await axios.post('https://api.miraplay.cloud/games/by_page', {
         page,
         isFreshGamesFirst: true,
-        genre: genre,
+        genre: genre === 'ALL' ? false : genre,
         gamesToShow: 9,
       });
 
       const newGames = response.data.games;
 
-      if (newGames.length === 0) {
-        setHasMoreGames(false);
-      } else {
+      if (newGames.length === 9) {
+        setHasMoreGames(true);
         setGames(() => [ ...newGames]);
+      } else {
+        setGames(() => [...newGames]);
+        setHasMoreGames(false);
       }
     } catch (error) {
       console.error('Error fetching data:', error.message);
@@ -63,7 +65,7 @@ const GameList = () => {
     fetchGames();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, genre]);
-
+  console.log(genre)
   const handleGenreChange = (selectedGenre) => {
     setGenre(selectedGenre);
     setPage(1);
